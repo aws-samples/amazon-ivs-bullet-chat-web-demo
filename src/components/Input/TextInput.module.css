@@ -1,0 +1,42 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  appearance: none;
+  width: 100%;
+}
+
+.input {
+  height: 44px;
+  width: 100%;
+  max-width: 488px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  padding-left: 20px;
+  border: none;
+  outline: 1px solid transparent;
+}
+
+input::placeholder {
+  color: #fff;
+  opacity: 0.6;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  outline: 1px solid #fff;
+}
+
+input:invalid {
+  outline: 1px solid var(--error-color);
+}
+
+.errorInput,
+.errorInput:focus {
+  outline: 1px solid var(--error-color);
+}

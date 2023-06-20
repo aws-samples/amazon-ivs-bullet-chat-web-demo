@@ -1,0 +1,411 @@
+.hidden {
+  display: none;
+}
+
+.hideOpacity {
+  opacity: 0;
+
+}
+
+.background {
+  background-color: var(--background-color);
+  height: 82px;
+  width: 660px;
+  max-width: 100vw;
+  margin: 0 auto;
+  border-radius: 48px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 46px;
+  z-index: 0;
+  padding: 0;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+  gap: 12px;
+  max-width: 660px;
+  width: 93vw;
+  margin: 0 auto;
+
+}
+
+.emojiButton {
+  padding: 0 auto;
+  height: 46px;
+  width: 46px;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.emojiButton:hover {
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.emojiButton:active {
+  background: #4C9FFF;
+  transition: 0.1s;
+}
+
+.specialEmojiButton {
+  background: rgba(189, 0, 255, 0.3);
+  transition: 0.1s;
+}
+
+/* TOOLTIPS */
+.speechBubbleRowContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -40px;
+  max-width: 93vw;
+  width: 675px;
+}
+
+.speechBubble {
+  padding: 8px 12px;
+  background: #0058aa;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  position: relative;
+  width: 146px;
+  border-radius: 10px;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.speechBubble::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  height: 30px;
+  width: 30px;
+  background: #0058aa;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.speechBubbleAnimation {
+  animation: 1s speechBubbleAnimation;
+}
+
+.first {}
+
+.second {
+  width: 158px;
+  position: relative;
+
+}
+
+/* COMPOSER INPUT */
+.composerInput {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 488px;
+  z-index: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.input {
+  width: 465px;
+  background: linear-gradient(90deg, rgba(189, 0, 255, 0.3) 0%, rgba(255, 122, 242, 0.3) 20%, rgba(255, 199, 0, 0.3) 48%, var(--secondary-color) 52%);
+  background-size: 220%;
+  background-position: right;
+  position: absolute;
+  z-index: 0;
+  transition: 0.2s;
+
+}
+
+.specialInput {
+  background-position: left;
+  transition: 0.2s;
+}
+
+/* MESSAGE FORMAT BUTTONS */
+.formatButtonContainer {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, .0);
+  background: none;
+  right: 12px;
+  bottom: 10px;
+  margin-bottom: 0px;
+  z-index: 2;
+  transition: 0.1s;
+  height: 28px;
+  width: 28px;
+  padding: 0px;
+}
+
+.formatButtonContainer img {
+  height: 100%;
+  width: 100%;
+}
+
+.tinyButton {
+  margin-bottom: 2px;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+  right: 16px;
+}
+
+.bwButton {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  margin-bottom: 0px;
+  z-index: 1;
+
+}
+
+.styleButtonsWrapper:hover .tinyButton {
+  margin-bottom: 30px;
+}
+
+/* COMPOSER ERROR MESSAGE */
+
+.errorMessageWrapper {
+  margin-top: -12px;
+  margin-left: 80px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  z-index: -2;
+}
+
+.composerErrorIcon {
+  height: 16px;
+  filter: brightness(70%) sepia(80%) saturate(100) hue-rotate(25deg);
+}
+
+.composerErrorText {
+  margin: 0;
+  color: #ff322f;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+/* .sendButton {
+  height: 48px;
+  width: 60px;
+  background: var(--primary-color);
+  border-radius: 50px;
+  opacity: 0.3;
+  padding-top: 6px;
+  padding-left: 7px;
+} */
+
+.sendButton {
+  width: 60px;
+  padding-top: 6px;
+  padding-left: 7px;
+}
+
+.sendIcon {
+  width: 20px;
+}
+
+@keyframes speechBubbleAnimation {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  80% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+
+}
+
+@media screen and (hover: none) {
+
+  /* MESSAGE FORMAT BUTTONS */
+  .styleButtonsWrapper:hover .tinyButton {
+    margin-bottom: 0px;
+  }
+
+  /* TOOLTIPS */
+  .speechBubble {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .background {
+    position: relative;
+
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .background {
+    bottom: 0px;
+    position: fixed;
+    z-index: 0;
+    border-radius: 0;
+  }
+
+  .container {
+    padding-top: 18px;
+  }
+
+  .errorMessageWrapper {
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    background: var(--error-color);
+    height: max-content;
+    width: max-content;
+    padding: 8px;
+    padding-right: 10px;
+    border-radius: 20px;
+  }
+
+  .composerErrorIcon {
+    filter: none;
+  }
+
+  .composerErrorText {
+    color: white;
+  }
+
+  .redOutline {
+    outline: 1px solid var(--error-color);
+  }
+
+  .speechBubbleRowContainer {
+    top: -132px;
+    width: 674px;
+    margin-left: 3vw;
+    left: -67px;
+    z-index: -1;
+
+  }
+
+  .speechBubble {
+    border-radius: 10px;
+    z-index: 2;
+    /* display: none; */
+  }
+
+  .speechBubble::before {
+    content: "";
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    background: #0058aa;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  }
+
+  .second {
+    width: 158px;
+    position: relative;
+
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .speechBubbleRowContainer {
+    width: 608px;
+    margin-left: 3vw;
+    left: 0px;
+  }
+
+  .first::before {
+    content: "";
+    top: 25px;
+    height: 30px;
+    width: 30px;
+    background: #0058aa;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    z-index: -1;
+    left: 0;
+    margin-left: 10px;
+
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .container {
+    padding-top: 18px;
+  }
+
+  .speechBubbleRowContainer {
+    width: 100vw;
+    margin-left: 3vw;
+    left: 0px;
+
+  }
+
+  .first::before {
+    content: "";
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    background: #0058aa;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    z-index: -1;
+    left: 0;
+    margin-left: 10px;
+
+  }
+
+  .second::before {
+    content: "";
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    background: #0058aa;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    z-index: -1;
+    left: 0;
+    margin-left: 80px;
+
+  }
+}
+

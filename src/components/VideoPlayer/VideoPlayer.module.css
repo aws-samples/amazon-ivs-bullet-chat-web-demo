@@ -1,0 +1,4 @@
+.videoBackground {
+  pointer-events: none;
+  background-color: #000;
+}

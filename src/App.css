@@ -1,0 +1,248 @@
+:root {
+  --primary-color: #097de9;
+  --secondary-color: #292b32;
+  --background-color: #16171b;
+  --signin-overlay-color: rgba(10, 10, 10, 0.8);
+  --signin-background-color: var(--background-color);
+  --gray-text-color: #abafbd;
+  --error-color: #ea1300;
+  --base-fontSize: 20px;
+  --responsive-fontSize: calc(16px + var(--base-fontSize));
+  --base-opacity: 1;
+  --base-speed: 20s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  background: var(--background-color);
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+}
+
+.App {
+  position: relative;
+}
+
+.fadeIn {
+  transition: 0.1s;
+  opacity: 1;
+}
+
+.fadeOut {
+  transition: 0.1s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.zIndex {
+  z-index: 0;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type='text'] {
+  border: none;
+  padding-left: 20px;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+.cancelIcon {
+  opacity: 0.3;
+  height: 14px;
+  padding-bottom: 4px;
+  position: absolute;
+  right: 48px;
+  bottom: 406px;
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+}
+
+.settingsButton {
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+}
+
+.settingsIcon {
+  height: 46px;
+  width: 46px;
+  transform: rotateZ(0);
+  transition: transform 150ms ease;
+}
+
+.settingsIconActive {
+  transition: transform 150ms ease;
+  transform: rotateZ(45deg);
+}
+
+#vid-container {
+  max-height: 704px;
+  max-width: 1214px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  min-height: 186px;
+  min-width: 302px;
+  z-index: 0;
+}
+
+.composer {
+  position: absolute;
+  width: 80%;
+  height: 100px;
+  z-index: 0;
+  bottom: -90px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --responsive-fontSize: calc(0px + var(--base-fontSize));
+  }
+
+  body {
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  video {
+    border-radius: 0;
+    margin-top: 0px;
+  }
+
+  .settingsIcon {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+  }
+
+  #vid-container {
+    padding-top: 0%;
+    margin-top: 0;
+    z-index: 1;
+  }
+
+  .constantSettings {
+    transition: 0.1s ease-in-out;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    padding-top: 20px;
+  }
+
+  .fadeIn {
+    animation: none;
+    transform: translateY(0%);
+    opacity: 1;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.1s;
+  }
+
+  .fadeOut {
+    animation: none;
+    transform: translateY(200%);
+    opacity: 1;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.1s;
+  }
+
+  .cancelIcon {
+    bottom: 350px;
+    right: 32px;
+    display: block;
+    padding-bottom: 0px;
+  }
+
+  .composer {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  #vid-container {
+    margin-top: 0px;
+  }
+
+  .composer {
+    z-index: 0;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 890px) {
+  :root {
+    --responsive-fontSize: calc(8px + var(--base-fontSize));
+  }
+}
+
+@keyframes scroll-animation {
+  from {
+    transform: translateX(1200px);
+  }
+
+  to {
+    transform: translateX(-400px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

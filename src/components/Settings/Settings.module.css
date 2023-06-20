@@ -1,0 +1,343 @@
+.settingsPanel {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin-right: 20px;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  background-color: var(--background-color);
+  border-radius: 30px;
+  z-index: 5;
+  background-color: rgba(30, 31, 36, 0.95);
+  display: flex;
+  transition: 0.2s;
+  opacity: 1;
+  max-height: 70%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.settingsScrollContainer {
+  overflow-y: auto;
+  margin: 28px 0 28px 0;
+  padding: 0 30px 0 30px;
+  scrollbar-gutter: auto;
+}
+
+.horizontalFlex {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+  display: flex;
+  color: #fff;
+  width: 100%;
+}
+
+.cancelIcon {
+  height: 0;
+  width: 0;
+}
+
+.settingsControls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  min-width: 210px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.settingName {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #adb1bd;
+  width: 140px;
+}
+
+/* RANGE SLIDER */
+.sliderWidth {
+  width: 210px;
+}
+
+input {
+  writing-mode: horizontal-tb;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  background-color: field;
+  margin-bottom: 0px;
+}
+
+.rangeSlider {
+  width: 210px;
+  position: relative;
+}
+
+.tickmarks {
+  height: 8px;
+  pointer-events: none;
+  margin-bottom: 12px;
+  margin-top: -28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dot {
+  mix-blend-mode: lighten;
+  height: 3px;
+  width: 3px;
+  background: var(--gray-text-color);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.bigger {
+  height: 6px;
+  width: 6px;
+  padding: 0;
+}
+
+.biggerMin {
+  margin-left: 4px;
+}
+
+.biggerMax {
+  margin-right: 4px;
+}
+
+input[type='range'] {
+  height: 18px;
+  -webkit-appearance: none;
+  margin: 12px 0;
+  background: transparent;
+  z-index: 1;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  background: #555968;
+  border-radius: 26px;
+  border: 0px solid #010101;
+  z-index: 1;
+  margin-bottom: 7px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  border: 0px solid #00001e;
+  height: 22px;
+  width: 22px;
+  border-radius: 30px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+  z-index: 10;
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #555968;
+  z-index: 1;
+}
+
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  background: #555968;
+  border-radius: 26px;
+  border: 0px;
+  z-index: 1;
+}
+
+input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #9baaba;
+  border: 0px solid #00001e;
+  height: 22px;
+  width: 22px;
+  border-radius: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  z-index: 1;
+}
+
+input[type='range']::-ms-fill-lower {
+  background: var(--primary-color);
+}
+
+input[type='range']:focus::-ms-fill-lower {
+  background: var(--primary-color);
+}
+
+input[type='range']::-ms-fill-upper {
+  background: #555968;
+  border-radius: 2.6px;
+}
+
+input[type='range']:focus::-ms-fill-upper {
+  background: #555968;
+}
+
+input[type='range']::-ms-thumb {
+  margin-top: 1px;
+  height: 22px;
+  width: 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sliderSublabels {
+  display: flex;
+  justify-content: space-between;
+  color: #6d7181;
+  margin-top: -15px;
+  min-width: 210px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* TOGGLE */
+.toggleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 210px;
+  width: 100%;
+  height: 40px;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 58px;
+  height: 40px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 3px;
+  right: 0;
+  bottom: 3px;
+  left: 3px;
+  background-color: #555968;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 22px;
+  width: 22px;
+  left: 5px;
+  bottom: 6px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+.sliderRound {
+  border-radius: 34px;
+}
+
+.sliderRound:before {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  .settingsPanel {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    gap: 4px;
+    padding: 0;
+    border-radius: 30px 30px 0 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(41, 43, 50);
+  }
+
+  .settingsScrollContainer {
+    overflow-y: hidden;
+    height: 100%;
+    width: 80%;
+  }
+
+  .sliderWidth {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rangeSlider {
+    min-width: 100%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 890px) {
+  .settingsScrollContainer {
+    overflow-y: auto;
+  }
+}

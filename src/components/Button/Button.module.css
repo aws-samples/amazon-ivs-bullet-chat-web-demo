@@ -1,0 +1,12 @@
+.allButtons {
+  height: 46px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  opacity: 1;
+}
+.allButtons[disabled] {
+  opacity: 0.3;
+}
+.allButtons:active {
+  background: #469bff;
+}

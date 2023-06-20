@@ -1,0 +1,118 @@
+.signInOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--signin-overlay-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.signInContainer {
+  background-color: var(--signin-background-color);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  gap: 32px;
+  max-width: 90vw;
+}
+
+.getStarted {
+  max-width: 462px;
+  width: 100%;
+  font-size: 32px;
+  margin-top: -4px;
+  margin-bottom: -6px;
+}
+
+.avatarBox {
+  max-width: 100%;
+  background: var(--secondary-color);
+  border-radius: 24px;
+  position: relative;
+  display: flex;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -20px;
+  width: 462px;
+}
+
+.avatarFlexContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-start;
+  margin-top: 16px;
+  max-width: 422px;
+  overflow-y: auto;
+  gap: 13px;
+}
+
+.avatarText {
+  max-width: 422px;
+  width: 90%;
+  color: #fff;
+  opacity: 0.6;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.nameInput {
+  max-width: 442px;
+  width: 100%;
+  background: var(--secondary-color);
+}
+
+.joinButton {
+  max-width: 462px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+.spinner {
+  margin-top: 4px;
+  height: 30px;
+  transition: 0.1 fade;
+  animation: spin 1s infinite linear;
+}
+
+@media screen and (max-width: 500px) {
+  .signInOverlay {
+    background-color: var(--signin-background-color);
+  }
+
+  .signInContainer {
+    padding: 0px;
+    gap: 20px;
+  }
+
+  .getStarted {
+    font-size: 24px;
+  }
+
+  .avatarBox {
+    margin-top: -10px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  from {
+    transform: rotate(-360deg);
+  }
+}

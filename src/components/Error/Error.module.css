@@ -1,0 +1,28 @@
+.errorMessage {
+  background: var(--error-color);
+  position: fixed;
+  top: 20px;
+  right: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 50px;
+  padding: 13px 14px;
+  height: 20px;
+  width: max-content;
+}
+
+.warningIcon {
+  height: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .errorMessage {
+    left: 18px;
+  }
+}
